@@ -16,7 +16,7 @@ func (c *consistentStorage) StoreB(i int) {
 	panic("implement me")
 }
 
-func (c *consistentStorage) GetB(i int) {
+func (c *consistentStorage) GetB() int {
 	panic("implement me")
 }
 

@@ -20,7 +20,7 @@ func (c *commonStorage) StoreB(i int) {
 	panic("implement me")
 }
 
-func (c *commonStorage) GetB(i int) {
+func (c *commonStorage) GetB() int {
 	panic("implement me")
 }
 

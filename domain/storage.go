@@ -6,7 +6,7 @@ type Storager interface {
 	GetA() int
 
 	StoreB(i int)
-	GetB(i int)
+	GetB() int
 }
 
 // ConsistentStorager предоставляет функционал консистентного хранилища сущностей.

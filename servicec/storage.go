@@ -1,17 +1,18 @@
 package servicec
 
-type Storager interface {
+import "tmp/domain"
+
+type storager interface {
 	StoreA(i int)
 	GetA() int
 }
 
 type ConsistentStorager interface {
-	Storager
-	Commit()
-	Rollback()
+	storager
+	domain.Consistencer
 }
 
 type CommonStorager interface {
-	Storager
+	storager
 	WithConsistency() ConsistentStorager
 }
