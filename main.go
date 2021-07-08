@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	stg := &storage.CommonStorage{}
+	commonStorage := &storage.CommonStorage{}
 
-	svb := serviceb.New(
-		serviceb.NewCommonStorage(stg),
+	serviceB := serviceb.New(
+		serviceb.NewCommonStorage(commonStorage),
 	)
 
-	svb.DoSome(1)
+	serviceB.DoSome(1)
 }

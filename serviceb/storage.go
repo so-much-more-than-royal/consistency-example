@@ -1,7 +1,7 @@
 package serviceb
 
 import (
-	"tmp/provider"
+	"tmp/consistenter"
 	"tmp/storage"
 )
 
@@ -15,7 +15,7 @@ type storager interface {
 
 type ConsistentStorager interface {
 	storager
-	provider.Consistencer
+	consistenter.Consistencer
 }
 
 type CommonStorager interface {
