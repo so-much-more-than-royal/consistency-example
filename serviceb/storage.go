@@ -1,6 +1,6 @@
 package serviceb
 
-import "tmp/domain"
+import "tmp/provider"
 
 type storager interface {
 	StoreA(i int)
@@ -12,7 +12,7 @@ type storager interface {
 
 type ConsistentStorager interface {
 	storager
-	domain.Consistencer
+	provider.Consistencer
 }
 
 type CommonStorager interface {
