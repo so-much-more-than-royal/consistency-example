@@ -1,6 +1,9 @@
 package servicea
 
-import "tmp/provider"
+import (
+	"tmp/provider"
+	"tmp/storage"
+)
 
 type storager interface {
 	StoreA(i int)
@@ -15,4 +18,16 @@ type ConsistentStorager interface {
 type CommonStorager interface {
 	storager
 	WithConsistency() ConsistentStorager
+}
+
+func NewCommonStorage(storage *storage.CommonStorage) CommonStorager {
+	return &commonStorage{storage}
+}
+
+type commonStorage struct {
+	*storage.CommonStorage
+}
+
+func (c *commonStorage) WithConsistency() ConsistentStorager {
+	return c.CommonStorage.WithConsistency()
 }
