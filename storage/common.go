@@ -1,9 +1,5 @@
 package storage
 
-import (
-	"tmp/domain"
-)
-
 // commonStorage является реализацией интерфейса domain.CommonStorager.
 type commonStorage struct {
 }
@@ -24,6 +20,6 @@ func (c *commonStorage) GetB() int {
 	panic("implement me")
 }
 
-func (c *commonStorage) WithConsistency() domain.ConsistentStorager {
+func (c *commonStorage) WithConsistency() *consistentStorage {
 	panic("implement me")
 }
