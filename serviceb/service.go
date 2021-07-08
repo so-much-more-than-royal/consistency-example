@@ -23,4 +23,6 @@ func (s *service) DoSome(i int) {
 	b = tx.GetB()
 	tx.StoreA(a + 1)
 	tx.StoreB(b + 1)
+
+	tx.Commit()
 }
