@@ -1,29 +1,29 @@
 package storage
 
-// consistentStorage является реализацией domain.ConsistentStorager.
-type consistentStorage struct {
+// ConsistentStorage является реализацией domain.ConsistentStorager.
+type ConsistentStorage struct {
 }
 
-func (c *consistentStorage) StoreA(i int) {
+func (c *ConsistentStorage) StoreA(i int) {
 	panic("implement me")
 }
 
-func (c *consistentStorage) GetA() int {
+func (c *ConsistentStorage) GetA() int {
 	panic("implement me")
 }
 
-func (c *consistentStorage) StoreB(i int) {
+func (c *ConsistentStorage) StoreB(i int) {
 	panic("implement me")
 }
 
-func (c *consistentStorage) GetB() int {
+func (c *ConsistentStorage) GetB() int {
 	panic("implement me")
 }
 
-func (c *consistentStorage) Commit() {
+func (c *ConsistentStorage) Commit() {
 	panic("implement me")
 }
 
-func (c *consistentStorage) Rollback() {
+func (c *ConsistentStorage) Rollback() {
 	panic("implement me")
 }

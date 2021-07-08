@@ -1,25 +1,25 @@
 package storage
 
-// commonStorage является реализацией интерфейса domain.CommonStorager.
-type commonStorage struct {
+// CommonStorage является реализацией интерфейса domain.CommonStorager.
+type CommonStorage struct {
 }
 
-func (c *commonStorage) StoreA(i int) {
+func (c *CommonStorage) StoreA(i int) {
 	panic("implement me")
 }
 
-func (c *commonStorage) GetA() int {
+func (c *CommonStorage) GetA() int {
 	panic("implement me")
 }
 
-func (c *commonStorage) StoreB(i int) {
+func (c *CommonStorage) StoreB(i int) {
 	panic("implement me")
 }
 
-func (c *commonStorage) GetB() int {
+func (c *CommonStorage) GetB() int {
 	panic("implement me")
 }
 
-func (c *commonStorage) WithConsistency() *consistentStorage {
+func (c *CommonStorage) WithConsistency() *ConsistentStorage {
 	panic("implement me")
 }

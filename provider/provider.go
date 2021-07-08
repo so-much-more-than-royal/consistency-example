@@ -1,9 +1,10 @@
-package storage
+package provider
 
 import (
 	"tmp/servicea"
 	"tmp/serviceb"
 	"tmp/servicec"
+	storage2 "tmp/storage"
 )
 
 // Provider предоставляет функционал получения специализированных сервисных хранилищ.
@@ -18,35 +19,35 @@ var _ Provider = &provider{}
 
 // provider является реализацией Provider.
 type provider struct {
-	storage commonStorage
+	storage storage2.CommonStorage
 }
 
 func (p *provider) ServiceAStorage() servicea.CommonStorager {
-	return &serviceAStorage{commonStorage: p.storage}
+	return &serviceAStorage{CommonStorage: p.storage}
 }
 
-type serviceAStorage struct{ commonStorage }
+type serviceAStorage struct{ storage2.CommonStorage }
 
 func (s *serviceAStorage) WithConsistency() servicea.ConsistentStorager {
-	return s.commonStorage.WithConsistency()
+	return s.CommonStorage.WithConsistency()
 }
 
-type serviceBStorage struct{ commonStorage }
+type serviceBStorage struct{ storage2.CommonStorage }
 
 func (s *serviceBStorage) WithConsistency() serviceb.ConsistentStorager {
-	return s.commonStorage.WithConsistency()
+	return s.CommonStorage.WithConsistency()
 }
 
 func (p *provider) ServiceBStorage() serviceb.CommonStorager {
-	return &serviceBStorage{commonStorage: p.storage}
+	return &serviceBStorage{CommonStorage: p.storage}
 }
 
-type serviceCStorage struct{ commonStorage }
+type serviceCStorage struct{ storage2.CommonStorage }
 
 func (s *serviceCStorage) WithConsistency() servicec.ConsistentStorager {
-	return s.commonStorage.WithConsistency()
+	return s.CommonStorage.WithConsistency()
 }
 
 func (p *provider) ServiceCStorage() servicec.CommonStorager {
-	return &serviceCStorage{commonStorage: p.storage}
+	return &serviceCStorage{CommonStorage: p.storage}
 }
